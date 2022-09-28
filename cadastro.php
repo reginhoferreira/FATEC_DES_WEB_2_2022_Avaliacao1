@@ -1,4 +1,12 @@
 <?php 
+
+session_start();
+
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
+
 if (isset($_POST['marca']) and isset($_POST['ano']) and isset($_POST['placa']) and isset($_POST['chassi'])){
     $_POST['marca'];
     $_POST['ano'];
